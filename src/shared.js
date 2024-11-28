@@ -26,34 +26,18 @@ function getThreads() {
   return document.querySelectorAll('.js-threadList > .structItem');
 }
 
-function getUserName(post) {
-  return post.getAttribute('data-author');
-}
-
 function getNumberOfUserPosts(post) {
-  const userExtras = post.querySelector('.message-userExtras>.pairs');
-  return userExtras
-    ? parseInt(userExtras.textContent.replaceAll(',', ''), 10)
-    : Number.MAX_SAFE_INTEGER;
+  return parseInt(
+    (post.querySelector('.message-userExtras > dl:nth-child(2) > dd')?.textContent.trim().replace(',', '') || '0'),
+    10
+  )
 }
 
-function getAuthorName(thread) {
-  return thread.getAttribute('data-author');
+function getAuthorName(element) {
+  return element.getAttribute('data-author');
 }
 
 function getTitle(thread) {
   const titleElement = thread.querySelector('.structItem-title');
   return titleElement ? titleElement.innerText : '';
 }
-
-// Adiciona a classe "hidden" dinamicamente
-/* if (!document.getElementById('custom-css')) {
-  const style = document.createElement('style');
-  style.id = 'custom-css';
-  style.textContent = `
-    .hidden {
-      display: none !important;
-    }
-  `;
-  document.head.appendChild(style);
-} */
