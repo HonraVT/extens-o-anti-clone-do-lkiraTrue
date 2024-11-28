@@ -1,0 +1,5 @@
+/* Oculta posts e threads antes de serem processados */
+article.message,
+.js-threadList > .structItem {
+  visibility: hidden; /* Torna os elementos invisíveis */
+}

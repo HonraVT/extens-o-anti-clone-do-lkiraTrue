@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/options.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/snackbars.css" type="text/css" media="all">
+  </head>
+  <body>
+    <form>
+      <div class="users">
+        <h3>Lista de usuários a serem ignorados</h3>
+        <p>Coloque o nome dos users que deseja bloquear, separando por virgula os nomes. É preciso passar o nome exatamente igual</p>
+        <p>Exemplos de input:</p>
+        <p>zezin, modera</p>
+        <textarea name="users" id="users" cols="70" rows="4"></textarea><br>
+      </div>
+      <div class="blacklist">
+        <h3>Blacklist de palavras</h3>
+        <p>Separe as palavras com virgula da mesma forma</p>
+        <textarea name="blacklist" id="blacklist" cols="70" rows="4"></textarea><br>
+      </div>
+      <div class="postsNumber">
+        <h3>quantidade minima de posts para não ser ignorado</h3>
+        <input type="number" value="" name="minimumPosts" id="minimumPosts"/><br><br>
+      </div>
+      <div class="blocked-users">
+        <h3>Usuários bloqueados baseado no mínimo de posts</h3>
+        <p>Marque os usuários que você deseja permitir, mesmo que não atendam ao critério de posts mínimos.</p>
+        <div id="blocked-users-list" class="scrollable-list">
+          <p>Nenhum usuário bloqueado atualmente.</p>
+        </div>
+      </div>
+      <div id="error-message">O input está errado meu boçal</div>
+      <div id="success-message">Input salvo com sucesso!</div>
+      <button type="submit" class="btn">Salvar</button>
+    </form>
+    <script src="options.js" type="module"></script>
+  </body>
+</html>

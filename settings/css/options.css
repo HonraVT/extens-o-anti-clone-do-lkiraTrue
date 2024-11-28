@@ -1,0 +1,84 @@
+body {
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.success {
+  color: green;
+  font-size: 0.8rem;
+  font-style: bold;
+}
+
+input, textarea {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #2C3E50;
+}
+
+.btn {
+  width: 100px;
+  background: #27AE60;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+}
+
+.btn:hover, .btn:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+#blocked-users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f9f9f9;
+  max-width: 50%;
+  margin-left: 0;
+}
+
+/* Estilo para os itens da lista */
+#blocked-users-list div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Nome do usuário ocupa o espaço restante */
+#blocked-users-list span {
+  flex-grow: 1;
+}
+
+/* Contêiner do checkbox com alinhamento a direita */
+.checkbox-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: auto;
+}
+
