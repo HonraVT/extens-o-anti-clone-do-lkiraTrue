@@ -21,9 +21,9 @@ function processPosts(data, blocked, allowed) {
 function handlePost(post, storage, blocked, allowed) {
   const userName = post.getAttribute('data-author');
   const numberOfPosts = parseInt(
-    post.querySelector('.message-userExtras > dl:nth-child(2) > dd').textContent.trim().replaceAll(',', '')
+    (post.querySelector('.message-userExtras > dl:nth-child(2) > dd')?.textContent.trim().replace(',', '') || '0'),
+    10
   );
-  //console.log(["bloquear?:", userName, storageData.needIgnoreUser(userName, numberOfPosts) && !allowedUsers.has(userName)]);
   if (storage.needIgnoreUser(userName, numberOfPosts) && !allowed.has(userName)) {
     blocked.add(userName)
     post.style.display = 'none'; // Oculta o post indesejado
@@ -33,7 +33,7 @@ function handlePost(post, storage, blocked, allowed) {
 }
 
 function observeNewPosts(storage, blocked, allowed) {
-  const targetNode = document.querySelector('.p-body-pageContent'); // Pai dos posts
+  const targetNode = document.querySelector('.p-body-pageContent');
   if (!targetNode) return;
 
   const config = { childList: true, subtree: true }; // Observa adições no DOM
