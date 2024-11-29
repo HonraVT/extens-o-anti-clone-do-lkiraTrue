@@ -1,7 +1,7 @@
 # extensao-anti-clone-do-lkiraTrue
 Extensão anti-clone para o forum ignboards do usuário lkiraTrue.
 
-## Novidades da versão v4.0:
+## Novidades da versão 4.0:
 - Bloqueia threads de usuarios com poucas mensagens na home do forum, para isso é preciso visitar um de seus posts.
 - Checkbox para permitir usuários mesmo que nao tenham a quantidade mínima de posts.
 - Corrige o bug do twitter, converte automaticamente os links do X.com, para twitter.com
